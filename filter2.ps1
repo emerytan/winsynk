@@ -12,8 +12,9 @@ $output = foreach ($a in $me) {
     Sort-Object -Descending |
     Select-Object -skip 3 |
     Select-Object -ExpandProperty FullName
-#    Out-File -FilePath "$here/outFile.txt" -Encoding ascii    
+    Out-File -FilePath "$here/outFile.txt" -Encoding ascii    
 }
+
 
 
 
