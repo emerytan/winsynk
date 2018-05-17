@@ -1,0 +1,7 @@
+node_modules
+playground.js
+testNode.js
+*.icns
+built
+installer
+.DS_Store

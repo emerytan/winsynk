@@ -1,0 +1,33 @@
+{
+  "name": "tncsync",
+  "productName": "tncSync",
+  "version": "0.1.0",
+  "description": "watch directories and sync",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron .",
+    "build": "electron-packager . --overwrite --platform=win32 --arch=x64 --out=built",
+    "setup": "node build.js"
+  },
+  "keywords": [
+    "Electron",
+    "watchr"
+  ],
+  "author": "Emery Anderson",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^1.6.11",
+    "electron-packager": "^8.7.2",
+    "electron-squirrel-startup": "^1.0.0",
+    "electron-winstaller": "^2.6.4"
+  },
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "electron-winstaller": "^2.6.4",
+    "jquery": "^3.2.1",
+    "node-schedule": "^1.2.5",
+    "photonkit": "^0.1.2",
+    "watchr": "^3.0.1"
+  }
+}

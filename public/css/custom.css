@@ -1,0 +1,88 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+}
+
+.window-content {
+    overflow-y: hidden;
+    color: whitesmoke
+}
+
+.pane {
+    background-color: rgb(32, 32, 32);
+    color: #ddd;
+}
+
+.pane-sm {
+    background-color: rgb(16, 16, 16);
+    position: relative;
+    width: 25%;
+    height: 100%;
+    color: #ddd
+}
+
+.indentText {
+    margin-left: 8px;
+}
+
+#watchButtons {
+    position: relative;
+    margin: 10px;
+    height: 75%
+}
+
+#messageContainer {
+    position: relative;
+    margin: 10px;
+    height: 25%
+}
+
+.eta-button {
+    margin: 20px auto;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    height: 50px;
+    width: 80%;
+    font-size: 1.2em
+}
+
+legend {
+    color: whitesmoke;
+    align-content: center;
+    text-align: center;
+    margin: auto
+}
+
+#mainContainer {
+    position: relative;
+    height: 100%;
+    width: 100%
+}
+
+#config {
+    height: 20%;
+    padding: 20px 10px
+}
+
+#stdoutCont {
+    height: 80%;
+    padding: 10px
+}
+
+table,
+tr,
+td {
+    background-color: rgb(32, 32, 32);
+    margin-bottom: 20px
+}
+
+pre {
+    position: relative;
+    margin: 0 10px;
+    height: 40%;
+    overflow-y: hidden;
+    overflow-x: auto;
+    background-color: black;
+    color: whitesmoke;
+    font-size: .88em
+}
