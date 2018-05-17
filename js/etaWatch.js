@@ -25,6 +25,8 @@ var cronAss
 var cronShots
 var appDir = process.cwd()
 
+
+
 /// view
 window.onload = function () {
     ipc.send('view loaded')
