@@ -17,9 +17,3 @@ $output = foreach ($a in $me) {
 
 
 
-
-# shots robocopy command
-# robocopy Y:\VFX\_shots\ Z:\VFX\_shots\ /xd (Get-Content .\nodeApps\fixlist.txt | Select-Object -First 650) /xf "Thumbs.db" ".DS_Store" /mir /r:0 /w:0 /mon:100 /mot:30
-
-# assets robocopy command
-# robocopy \\10.34.140.250\panama\VFX\_assets\ Z:\VFX\_assets\ /xf "Thumbs.db", ".DS_Store" /xd "mdl_*", "setref_*" /mir /r:0 /w:0 /mon:100 /mot:30
