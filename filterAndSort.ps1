@@ -17,8 +17,7 @@ for ($i = 0; $i -lt $arr.Length; $i++) {
     $source = $(Join-Path Y:\VFX\_shots $arr[$i])
     $destination = $(Join-Path Z:\VFX\_shots $arr[$i])
 
-    Write-Host "rbc... source $source destination: $destination excluse list: $logfile"
-    Write-Host ""
+    Write-Host "source $source destination: $destination exclude list: $logfile"
     Robocopy.exe $source $destination /l /nfl /ndl /xf '.DS_Store', 'Thumbs.db' /xd (Get-Content $logfile) /r:0 /w:0
 }
 
