@@ -23,7 +23,7 @@ var autoAssetsState = false
 var autoShotsState = false
 var cronAss
 var cronShots
-var appDir = process.cwd()
+var appDir
 
 
 
@@ -46,13 +46,13 @@ window.onload = function () {
 								runAssets(commandOptions.source, commandOptions.destination, 'exclude: mdl* setref*')
 								break;
 							case 'shotsSync':
-								runShots(commandOptions.source, commandOptions.destination, 'exlude: from file list')
+								runShots(commandOptions.source, commandOptions.destination, 'exclude: maxage 15')
 								break;
 							case 'autoAss':
 								scheduleAssets(commandOptions.source, commandOptions.destination, 'exclude: mdl* setref*')
 								break;
 							case 'autoShots':
-								scheduleShots(commandOptions.source, commandOptions.destination, 'exlude: from file list')
+								scheduleShots(commandOptions.source, commandOptions.destination, 'exclude: maxage 15')
 								break;
 							default:
 								clearPage()
@@ -75,6 +75,14 @@ window.onload = function () {
 		$('#shotsAutoState').text('shots auto off').css('color', 'yellow')
 		$('#assetsAutoState').text('assets auto off').css('color', 'yellow')
 
+	})
+
+	ipc.on('app path', (event, message) => {
+		appDir = message.toString()
+		console.log(`app path message: ${message.toString()}`);
+		if (appDir) {
+			document.getElementById('msgs').innerText = 'bin path resolved'
+		}
 	})
 }
 
@@ -123,7 +131,7 @@ function runAssets(source, destination, ...args) {
 	let pinToBottom = document.getElementById('assetsOutput')
 	document.getElementById('syncAssets').disabled = true
 
-	let shits = path.resolve('./bin/roboAss.ps1')
+	let shits = path.join(appDir, './bin/roboAss.ps1')
 	const assets = spawn('powershell', [shits])
 
 	assets.stdout.on('data', (data) => {
@@ -160,7 +168,7 @@ function runShots(source, destination, ...args) {
 	let pinToBottom = document.getElementById('shotsOutput')
 	document.getElementById('syncShots').disabled = true
 
-	let poops = path.resolve('./bin/roboShots.ps1')
+	let poops = path.join(appDir, './bin/roboShots.ps1')
 	const shots = spawn('powershell', [poops])
 
 	shots.stdout.on('data', (data) => {

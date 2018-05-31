@@ -5,7 +5,7 @@ var settings = {
     outputDirectory: './installer',
     authors: 'Emery Anderson',
     exe: 'tncSync.exe',
-    version: '0.1.0',
+    version: '0.1.2',
     noMsi: true
 };
 
