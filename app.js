@@ -43,6 +43,7 @@ app.on('ready', function () {
 
 ipc.on('view loaded', () => {
     mainWindow.webContents.send('init view', 'App ready')
+    mainWindow.webContents.send('app path', app.getAppPath())
 })
 
 ipc.on('debugMessages', (event, args) => {
