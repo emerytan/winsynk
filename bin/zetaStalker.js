@@ -50,6 +50,19 @@ module.exports = {
         stalker.on('change', listener)
         stalker.on('log', console.log)
         
-       
+        // setTimeout(() => {
+        //     stalker.close()
+        // }, 20000)
+         
     }
 }
+
+
+// function 
+//         function next(err, cb) {
+//             if (err) {
+//                 return err
+//             }
+//             console.log(`watching ${srcDir}`);
+//         }
+//         var stalker = watchr.open(srcDir, listener, next)

@@ -24,6 +24,8 @@ var autoShotsState = false
 var cronAss
 var cronShots
 var appDir
+var assetsPID
+var shotsPID
 
 
 
@@ -36,6 +38,12 @@ window.onload = function () {
 		buttons[index].addEventListener('click', (event) => {
 			var element = this.event.target.id
 			var commandOptions = this.event.target.dataset
+
+			if (commandOptions.action == 'killjobs') {
+				document.getElementById('msgs').innerText = 'kill sync jobs'
+			}
+			
+			
 			if (commandOptions.action !== 'clear') {
 				Promise.all([
 						isPanama(safetyFirst), checkPath(commandOptions.source), checkPath(commandOptions.destination)
@@ -46,13 +54,13 @@ window.onload = function () {
 								runAssets(commandOptions.source, commandOptions.destination, 'exclude: mdl* setref*')
 								break;
 							case 'shotsSync':
-								runShots(commandOptions.source, commandOptions.destination, 'exclude: maxage 15')
+								runShots(commandOptions.source, commandOptions.destination, 'exclude: maxage 120')
 								break;
 							case 'autoAss':
 								scheduleAssets(commandOptions.source, commandOptions.destination, 'exclude: mdl* setref*')
 								break;
 							case 'autoShots':
-								scheduleShots(commandOptions.source, commandOptions.destination, 'exclude: maxage 15')
+								scheduleShots(commandOptions.source, commandOptions.destination, 'exclude: maxage 120')
 								break;
 							default:
 								clearPage()
