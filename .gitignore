@@ -6,5 +6,5 @@ built
 installer
 .DS_Store
 testRoboLoop.ps1
-tmp
+tmp/*
 *~
