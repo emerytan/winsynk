@@ -1,9 +1,10 @@
 node_modules
 playground.js
-testNode.js
+test*.js
 *.icns
 built
 installer
 .DS_Store
 testRoboLoop.ps1
-
+tmp
+*~
