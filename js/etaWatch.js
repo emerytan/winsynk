@@ -176,7 +176,7 @@ function runShots(source, destination, ...args) {
 	let pinToBottom = document.getElementById('shotsOutput')
 	document.getElementById('syncShots').disabled = true
 
-	let poops = path.join(appDir, './bin/roboShots.ps1')
+	let poops = path.join(appDir, './bin/roboLoop.ps1')
 	const shots = spawn('powershell', [poops])
 
 	shots.stdout.on('data', (data) => {
