@@ -1,8 +1,11 @@
 {
   "name": "tncsync",
   "productName": "tncSync",
-  "version": "0.1.2",
+  "version": "0.1.4",
   "description": "watch directories and sync",
+  "repository": {
+    "url": "https://www.github.com/emerytan/winsynk.git"
+  },
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -17,14 +20,13 @@
   "author": "Emery Anderson",
   "license": "ISC",
   "devDependencies": {
-    "electron": "^1.6.11",
+    "electron": "^1.8.8",
     "electron-packager": "^8.7.2",
     "electron-squirrel-startup": "^1.0.0",
     "electron-winstaller": "^2.6.4"
   },
   "dependencies": {
     "bootstrap": "^3.3.7",
-    "electron-winstaller": "^2.6.4",
     "jquery": "^3.2.1",
     "node-schedule": "^1.2.5",
     "photonkit": "^0.1.2",
