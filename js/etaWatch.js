@@ -234,6 +234,7 @@ function scheduleAssets(source, destination, ...args) {
 		autoAssetsState = false
 		cronAss.cancel()
 		document.getElementById('autoAssets').innerText = 'Assets auto off'
+		document.getElementById('assetsAutoState').innerText = 'Assets auto off'
 		$('#autoAssets').css('color', 'black')
 		$('#assetsAutoState').css('color', 'yellow')
 		document.getElementById('syncAssets').disabled = false
@@ -249,7 +250,7 @@ function scheduleShots(source, destination, ...args) {
 		document.getElementById('syncShots').disabled = true
 
 
-		cronShots = schedule.scheduleJob('0 0,15,30,45 * * * *', () => {
+		cronShots = schedule.scheduleJob('0 0,30 * * * *', () => {
 			isPanama(safetyFirst)
 				.then(runShots(source, destination, ...args))
 				.catch((err) => {
