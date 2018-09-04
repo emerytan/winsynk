@@ -3,6 +3,9 @@
   "productName": "tncSync",
   "version": "0.1.4",
   "description": "watch directories and sync",
+  "repository": {
+    "url": "https://www.github.com/emerytan/winsynk.git"
+  },
   "main": "app.js",
   "repository": {
     "url": "https://www.github.com/emerytan/winsynk"
